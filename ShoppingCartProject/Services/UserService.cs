@@ -89,6 +89,13 @@ namespace ShoppingCartProject.Services
             ResponseModel model = new ResponseModel();
             try
             {
+                if (userModel.Name == string.Empty)
+                {
+                    model.IsSuccess = false;
+                    model.Messsage = "Error : " + "User Name cannot be empty";
+                    return model;
+                }
+
                 User _temp = GetUserDetailsById(userModel.UserId);
                 if (_temp == null)
                 {

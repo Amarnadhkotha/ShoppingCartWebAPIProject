@@ -82,6 +82,20 @@ namespace ShoppingCartProject.Services
             ResponseModel model = new ResponseModel();
             try
             {
+                if (productModel.ProductName == string.Empty)
+                {
+                    model.IsSuccess = false;
+                    model.Messsage = "Error : " + "Product Name cannot be empty";
+                    return model;
+                }
+
+                if (productModel.Price <= 0)
+                {
+                    model.IsSuccess = false;
+                    model.Messsage = "Error : " + "Product Price cannot be Less than or Equal to Zero";
+                    return model;
+                }
+
                 Product _temp = GetProductDetailsById(productModel.ProductId);
                 if (_temp == null)
                 {
