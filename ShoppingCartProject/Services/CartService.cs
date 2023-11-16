@@ -139,7 +139,8 @@ namespace ShoppingCartProject.Services
                 {
                     foreach (Cart cart in CartProduct)
                     {
-                        ProductTotalQuantityUsed = ProductTotalQuantityUsed + cart.Quantity;
+                        if (cart.UserId == cartModel.UserId)
+                            ProductTotalQuantityUsed = ProductTotalQuantityUsed + cart.Quantity;
                     }
                     ProductTotalQuantityUsed = ProductTotalQuantityUsed + cartModel.Quantity;
                 }
@@ -236,7 +237,8 @@ namespace ShoppingCartProject.Services
                     int ProductTotalQuantityUsed = 0;
                     foreach (Cart cart in CartProduct)
                     {
-                        ProductTotalQuantityUsed = ProductTotalQuantityUsed + cart.Quantity;
+                        if (cart.UserId == cartModel.UserId)
+                            ProductTotalQuantityUsed = ProductTotalQuantityUsed + cart.Quantity;
                     }
                     ProductTotalQuantityUsed = ProductTotalQuantityUsed + cartModel.Quantity;
 
