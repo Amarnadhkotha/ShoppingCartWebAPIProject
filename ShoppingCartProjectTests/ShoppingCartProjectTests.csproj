@@ -27,8 +27,4 @@
     <ProjectReference Include="..\ShoppingCartProject\ShoppingCartProject.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>
